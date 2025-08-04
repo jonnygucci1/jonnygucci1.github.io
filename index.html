@@ -45,13 +45,29 @@
             position: relative;
         }
         
-        .year-top {
-            position: absolute;
+        /* Navigation */
+        .nav {
+            position: fixed;
             top: 40px;
             left: 40px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
+            z-index: 100;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #39FF14;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        
+        .nav-dot.active,
+        .nav-dot:hover {
+            background: #39FF14;
         }
         
         .omg-hero {
@@ -180,7 +196,7 @@
         }
         
         .album-facts {
-            background: #000;
+            background: #2a2a2a;
             color: #fff;
             padding: 40px;
             text-align: center;
@@ -397,9 +413,51 @@
                 grid-template-columns: 1fr;
             }
             
-            .year-top, .year-badge {
+            .year-badge {
                 position: relative;
                 transform: none;
+                margin-top: 40px;
+            }
+            
+            .nav {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0,0,0,0.8);
+                padding: 10px 20px;
+                border-radius: 25px;
+                backdrop-filter: blur(10px);
+            }
+            
+            .section-indicator {
+                display: none;
+            }
+            
+            .omg-hero {
+                font-size: clamp(30px, 8vw, 80px);
+            }
+            
+            .gianni-hero {
+                font-size: clamp(40px, 12vw, 120px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                padding: 40px 15px;
+            }
+            
+            .visual-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .track-card {
+                padding: 20px;
+            }
+            
+            .album-facts {
+                padding: 30px 20px;
             }
         }
         
@@ -408,23 +466,33 @@
             scroll-behavior: smooth;
         }
         
-        /* OMG watermark */
-        .omg-watermark {
+        /* Section indicators */
+        .section-indicator {
             position: absolute;
             top: 40px;
             right: 40px;
-            font-family: 'Broken Lines', cursive;
+            font-size: 14px;
             color: #39FF14;
-            font-size: 32px;
-            opacity: 0.3;
-            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: bold;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-dot active" onclick="scrollToSection('hero')" title="Home"></div>
+        <div class="nav-dot" onclick="scrollToSection('artist')" title="Artist"></div>
+        <div class="nav-dot" onclick="scrollToSection('tracklist1')" title="Tracklist 1-8"></div>
+        <div class="nav-dot" onclick="scrollToSection('tracklist2')" title="Tracklist 9-16"></div>
+        <div class="nav-dot" onclick="scrollToSection('visual')" title="Visual Identity"></div>
+        <div class="nav-dot" onclick="scrollToSection('contact')" title="Contact"></div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="year-top">2025</div>
+    <section id="hero" class="hero">
         <div class="omg-hero">OMG</div>
         <div class="gianni-hero">GIANNI</div>
         <div class="artist-name-hero">Jonny Gucci</div>
@@ -433,8 +501,8 @@
     </section>
 
     <!-- Artist Section -->
-    <section class="section">
-        <div class="omg-watermark">OMG</div>
+    <section id="artist" class="section">
+        <div class="section-indicator">01</div>
         <div class="section-header">
             <h1 class="section-title">ARTIST</h1>
             <div class="section-subtitle">The Story Behind The Music</div>
@@ -490,8 +558,8 @@
     </section>
 
     <!-- Tracklist Section 1-8 -->
-    <section class="section">
-        <div class="omg-watermark">OMG</div>
+    <section id="tracklist1" class="section">
+        <div class="section-indicator">02</div>
         <div class="section-header">
             <h1 class="section-title">TRACKLIST</h1>
             <div class="section-subtitle">Songs 1-8</div>
@@ -568,8 +636,8 @@
     </section>
 
     <!-- Tracklist Section 9-16 -->
-    <section class="section">
-        <div class="omg-watermark">OMG</div>
+    <section id="tracklist2" class="section">
+        <div class="section-indicator">03</div>
         <div class="section-header">
             <h1 class="section-title">TRACKLIST</h1>
             <div class="section-subtitle">Songs 9-16</div>
@@ -653,8 +721,8 @@
     </section>
 
     <!-- Visual Identity Section -->
-    <section class="section">
-        <div class="omg-watermark">OMG</div>
+    <section id="visual" class="section">
+        <div class="section-indicator">04</div>
         <div class="section-header">
             <h1 class="section-title">VISUAL IDENTITY</h1>
             <div class="section-subtitle">Cinematic Style & Limited Edition</div>
@@ -708,8 +776,8 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section">
-        <div class="omg-watermark">OMG</div>
+    <section id="contact" class="section">
+        <div class="section-indicator">05</div>
         <div class="section-header">
             <h1 class="section-title">CONTACT</h1>
             <div class="section-subtitle">Business & Press Information</div>
@@ -767,5 +835,39 @@
         Raw, unfiltered, authentic<br><br>
         "Oh mein Gott Gianni, das mein Blueprint"
     </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Update active nav dot
+            document.querySelectorAll('.nav-dot').forEach(dot => dot.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        // Update active nav dot on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['hero', 'artist', 'tracklist1', 'tracklist2', 'visual', 'contact'];
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            let current = '';
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const sectionTop = section.offsetTop - 200;
+                if (window.pageYOffset >= sectionTop) {
+                    current = sectionId;
+                }
+            });
+            
+            navDots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (sections[index] === current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
