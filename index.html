@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonny Gucci - GIANNI Complete EPK</title>
+    <style>
+        @font-face {
+            font-family: 'RST-Reactor XCNDBold';
+            src: url('RSTReactorTRIAL-XCndBold-BF65a89475a3ace.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Broken Lines';
+            src: url('BrokenLinesRegular-9V7Z.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #fff;
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            font-size: 12pt;
+        }
+        
+        .page {
+            page-break-after: always;
+            min-height: 92vh;
+            padding: 18px 22px;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #fff;
+            position: relative;
+        }
+        
+        
+        .omg-title {
+            font-family: 'Broken Lines', cursive;
+            font-size: 68pt;
+            color: #39FF14;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: -10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-title {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 88pt;
+            color: #BAB6C0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .artist-name {
+            font-size: 22pt;
+            color: #000;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .epk-subtitle {
+            font-size: 16pt;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .year-badge {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background: #39FF14;
+            color: #000;
+            padding: 12px 24px;
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 20pt;
+            font-weight: bold;
+            transform: rotate(-3deg);
+        }
+        
+        /* Content Pages */
+        .content-page {
+            position: relative;
+        }
+        
+        .page-header {
+            border-bottom: 4px solid #39FF14;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+        }
+        
+        .page-title {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 32pt;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            font-size: 14pt;
+            color: #39FF14;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        /* Bio Section */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .bio-text {
+            font-size: 13pt;
+            line-height: 1.7;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        
+        .bio-text strong {
+            color: #39FF14;
+            font-weight: bold;
+        }
+        
+        .bio-highlight {
+            background: #f8f8f8;
+            border-left: 6px solid #39FF14;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 12pt;
+        }
+        
+        .stats-box {
+            background: #2a2a2a;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .stats-box h3 {
+            color: #39FF14;
+            margin-bottom: 20px;
+            font-size: 16pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .stat-item {
+            margin-bottom: 18px;
+        }
+        
+        .stat-number {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 28pt;
+            color: #39FF14;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 11pt;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Quote Boxes */
+        .quote-box {
+            font-family: 'Courier New', monospace;
+            background: #f8f8f8;
+            border: 3px solid #39FF14;
+            border-left: 6px solid #39FF14;
+            padding: 18px;
+            margin: 20px 0;
+            color: #000;
+            font-size: 10pt;
+            line-height: 1.3;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 48pt;
+            color: #39FF14;
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            margin-left: 35px;
+            font-weight: bold;
+        }
+        
+        /* Tracklist */
+        .tracklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .track-card {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 12px;
+            position: relative;
+            min-height: 115px;
+        }
+        
+        .track-number {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 18pt;
+            color: #39FF14;
+            position: absolute;
+            top: -15px;
+            left: 18px;
+            background: #fff;
+            padding: 0 12px;
+        }
+        
+        .track-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 8px;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+        
+        .track-feature {
+            font-size: 10pt;
+            color: #39FF14;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .track-lyrics {
+            color: #444;
+            font-size: 9pt;
+            line-height: 1.3;
+            font-style: italic;
+        }
+        
+        /* Photos Grid */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .photo-item {
+            border: 3px solid #000;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1;
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 6px;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            background: #f8f8f8;
+            border-left: 6px solid #39FF14;
+            padding: 20px;
+        }
+        
+        .contact-label {
+            color: #39FF14;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-size: 12pt;
+            letter-spacing: 2px;
+        }
+        
+        .contact-value {
+            color: #000;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+        
+        .contact-description {
+            color: #666;
+            font-size: 11pt;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+        
+        /* Footer */
+        .page-footer {
+            margin-top: 20px;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 7pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer-highlight {
+            color: #39FF14;
+            font-weight: bold;
+        }
+        
+        .logo-mark {
+            font-family: 'Broken Lines', cursive;
+            color: #39FF14;
+            font-size: 24pt;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.3;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .page {
+                min-height: 90vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <div class="omg-title">OMG</div>
+        <div class="main-title">GIANNI</div>
+        <div class="artist-name">Jonny Gucci</div>
+        <div class="epk-subtitle">Electronic Press Kit</div>
+        <div class="year-badge">2025</div>
+    </div>
+
+    <!-- Artist Bio Page -->
+    <div class="page content-page">
+        <div class="logo-mark">OMG</div>
+        <div class="page-header">
+            <h1 class="page-title">Artist</h1>
+            <div class="page-subtitle">The Story Behind The Music</div>
+        </div>
+        
+        <div class="bio-section">
+            <div>
+                <div class="bio-text">
+                    <strong>Jonny Gucci</strong> ist nicht nur ein Künstler – er ist ein Statement. Mit seinem neuen Album <strong>"GIANNI"</strong> definiert er neu, was es bedeutet, authentisch und roh zu sein. Seine Texte sind direkt, ungefiltert und spiegeln eine Generation wider, die keine Kompromisse macht.
+                </div>
+                
+                <div class="bio-highlight">
+                    "Fashion, Musik, Lifestyle – alles verschmilzt zu einem großen, unzensierten Erlebnis. GIANNI ist nicht nur ein Album, es ist eine Weltanschauung."
+                </div>
+                
+                <div class="bio-text">
+                    Von High-Fashion bis zu Street-Style, von Rap bis zu experimentellen Sounds – Jonny Gucci bewegt sich mühelos zwischen den Welten und schafft dabei seinen eigenen, unverwechselbaren Kosmos. Seine Texte sind geprägt von Luxus-Referenzen, Designer-Brands und einem Lebensgefühl, das zwischen Extravaganz und Realität pendelt.
+                </div>
+            </div>
+            
+            <div class="stats-box">
+                <h3>Album Facts</h3>
+                <div class="stat-item">
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">Tracks</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3<sup style="font-size: 18pt; vertical-align: super;">½</sup></span>
+                    <span class="stat-label">Features</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2025</span>
+                    <span class="stat-label">Release</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">OMG</span>
+                    <span class="stat-label">Signature</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quote-box">
+            <div class="quote-text">
+                "He, das ist einfach absurd, Bro<br>
+                Ich mach einfach nur, was ich will<br>
+                Mach Musik, design Klamotten und in der restlichen Zeit geh ich aus<br>
+                Bestell mir einfach das Teuerste auf Karte, ohne zu wissen, was es ist"
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <span class="footer-highlight">JONNY GUCCI</span> | GIANNI EPK | Page 1
+        </div>
+    </div>
+
+    <!-- Tracklist Page 1 -->
+    <div class="page content-page">
+        <div class="logo-mark">OMG</div>
+        <div class="page-header">
+            <h1 class="page-title">Tracklist</h1>
+            <div class="page-subtitle">Songs 1-8</div>
+        </div>
+        
+        <div class="tracklist-grid">
+            <div class="track-card">
+                <div class="track-number">01</div>
+                <div class="track-title">Gianni</div>
+                <div class="track-lyrics">
+                    "Trage Marni über Marni / Lieber einmal mehr als garnie / Was Stilisten, bin ein Gianni / Immer noch Miyagi"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">02</div>
+                <div class="track-title">Rapunzel</div>
+                <div class="track-feature">feat. Spaceship8</div>
+                <div class="track-lyrics">
+                    "Du hast deinen Prinz gefunden, ey Rapunzel / Wenn deine Kleidung nicht von mir ist, ist das Fummel / Oh mein Gott Gianni, das mein Blueprint"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">03</div>
+                <div class="track-title">Avicci</div>
+                <div class="track-lyrics">
+                    "Es geht um Levels und Levels / Ich setz mich nicht mehr in Nesseln / Runway mit JW Anderson"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">04</div>
+                <div class="track-title">Magie</div>
+                <div class="track-lyrics">
+                    "Es geht um Magie, es geht um Swag oder ganz einfach nur Money / The very excellent Mister Gianni"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">05</div>
+                <div class="track-title">2Gs</div>
+                <div class="track-lyrics">
+                    "Ich hab zwei Girlfriends, eine für mich und eine für mich / Rock nur mit meinem eigenen Scheiß, oh Boy, da kenn ich nichts"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">06</div>
+                <div class="track-title">Emelies Song</div>
+                <div class="track-lyrics">
+                    "Hör mal, wer da hämmert / Oh Girl, ich lehn mich zu weit raus / Guccificate die Bitch, yeah"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">07</div>
+                <div class="track-title">Umami</div>
+                <div class="track-feature">feat. Gold</div>
+                <div class="track-lyrics">
+                    "Oh mein Gott Gianni / Das Wasser will tanzen, meine Diamonds spielen Poolparty / Ich date nur Girls mit Style, denn die kennen Murakami"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">08</div>
+                <div class="track-title">Manieren</div>
+                <div class="track-lyrics">
+                    "Wo sind meine Manieren / Kenne kein Logo, das mein'n Namen trägt / Girl, ich bin dein Echo"
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <span class="footer-highlight">JONNY GUCCI</span> | GIANNI EPK | Page 2
+        </div>
+    </div>
+
+    <!-- Tracklist Page 2 -->
+    <div class="page content-page">
+        <div class="logo-mark">OMG</div>
+        <div class="page-header">
+            <h1 class="page-title">Tracklist</h1>
+            <div class="page-subtitle">Songs 9-16</div>
+        </div>
+        
+        <div class="tracklist-grid">
+            <div class="track-card">
+                <div class="track-number">09</div>
+                <div class="track-title">Pornstar</div>
+                <div class="track-feature">feat. Pimp.P</div>
+                <div class="track-lyrics">
+                    "Sie bewegt sich wie ein Pornstar / Fahr den Lambo wie ein Corsa / Girl, I can't stop, won't stop"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">10</div>
+                <div class="track-title">Update</div>
+                <div class="track-lyrics">
+                    "Wie fühlst du dich, wenn ich nicht da bin? / Brauch kurz ein Update, bitte warten / Bin zur Fashion Week geladen"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">11</div>
+                <div class="track-title">Bredouille</div>
+                <div class="track-lyrics">
+                    "Ess sie sticky wie japanisch Food / Oh mein Gott Gianni ey / Meine Red Flag ist mein Cashflow"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">12</div>
+                <div class="track-title">Denim</div>
+                <div class="track-feature">feat. Kiki</div>
+                <div class="track-lyrics">
+                    "Denim Jeans auf der Arbeit / 700 Tacken für Archives / Girl, mess mich, wenn, dann in Fahrenheit"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">13</div>
+                <div class="track-title">Villain</div>
+                <div class="track-lyrics">
+                    "Highroller Crew Shit forever / Für manch einen bin ich sowas wie 'n Villain / Für die Gang bin ich sowas wie 'n Virgil"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">14</div>
+                <div class="track-title">BDE</div>
+                <div class="track-lyrics">
+                    "Hab meinen Best Day Ever / Girl, nenn mich ruhig cheesy, doch ich weiß, dich interessiert der Cheddar"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">15</div>
+                <div class="track-title">Mainstage</div>
+                <div class="track-lyrics">
+                    "Rock ihren Körper, als wär's Partytime auf der Mainstage / Ich drop das Tape, wir gehen reich, yeah, Kiki & Ray J"
+                </div>
+            </div>
+            
+            <div class="track-card">
+                <div class="track-number">16</div>
+                <div class="track-title">Regenschirm</div>
+                <div class="track-lyrics">
+                    "Unter meinem Regenschirm ist noch Platz für dich / Spring in deine Pfützen, sei ruhig childish / Kauf kein Designer, ich design mich"
+                </div>
+            </div>
+        </div>
+        
+        <div class="quote-box" style="margin-top: 8px; margin-bottom: 30px; padding: 15px;">
+            <div class="quote-text">
+                "Oh mein Gott Gianni, das mein Blueprint"<br>
+                – Das Signature-Tag, das durch alle 16 Tracks zieht
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <span class="footer-highlight">JONNY GUCCI</span> | GIANNI EPK | Page 3
+        </div>
+    </div>
+
+    <!-- Visual Identity Page -->
+    <div class="page content-page">
+        <div class="logo-mark">OMG</div>
+        <div class="page-header">
+            <h1 class="page-title">Visual Identity</h1>
+            <div class="page-subtitle">Cinematic Style & Limited Edition</div>
+        </div>
+        
+        <div class="bio-text" style="margin-bottom: 15px; font-size: 11pt;">
+            Das visuelle Konzept von GIANNI spiegelt Jonny Guccis Persönlichkeit wider: <strong>minimalistisch aber impactful</strong>, 
+            roh aber durchdacht. Die Farbpalette aus giftigem Grün (#39FF14) und gedämpftem Grau (#BAB6C0) 
+            auf reinem Weiß schafft einen unverwechselbaren Look.
+        </div>
+        
+        <div class="photos-grid">
+            <div class="photo-item">
+                <img src="Album_Cover.jpeg" alt="GIANNI Album Cover">
+                <div class="photo-overlay">Album Cover</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni Vinyl.jpg" alt="GIANNI Limited Vinyl">
+                <div class="photo-overlay">Limited Vinyl</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni_Standing_1.jpeg" alt="Jonny Gucci Photo">
+                <div class="photo-overlay">Photo 01</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni_Sitting_1.jpeg" alt="Jonny Gucci Photo">
+                <div class="photo-overlay">Photo 02</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni_Car_1.jpeg" alt="Jonny Gucci Photo">
+                <div class="photo-overlay">Photo 03</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni_Standing_2.jpeg" alt="Jonny Gucci Photo">
+                <div class="photo-overlay">Photo 04</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni_Sitting_2.jpeg" alt="Jonny Gucci Photo">
+                <div class="photo-overlay">Photo 05</div>
+            </div>
+            <div class="photo-item">
+                <img src="Gianni_Car_2.jpeg" alt="Jonny Gucci Photo">
+                <div class="photo-overlay">Photo 06</div>
+            </div>
+        </div>
+        
+        <div class="bio-highlight" style="margin-top: 12px; padding: 15px; font-size: 10pt;">
+            <strong>Design Philosophy:</strong> "Keep it raw, keep it real, but make it look expensive" – 
+            Die Ästhetik kombiniert Street-Credibility mit High-Fashion-Anspruch. Alle Bilder sind 
+            cineastische Outdoor-Aufnahmen, die den rohen, authentischen Stil des Albums widerspiegeln.
+        </div>
+        
+        <div class="page-footer">
+            <span class="footer-highlight">JONNY GUCCI</span> | GIANNI EPK | Page 4
+        </div>
+    </div>
+
+    <!-- Contact & Info Page -->
+    <div class="page content-page">
+        <div class="logo-mark">OMG</div>
+        <div class="page-header">
+            <h1 class="page-title">Contact</h1>
+            <div class="page-subtitle">Business & Press Information</div>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-label">Contact</div>
+                <div class="contact-value">jonnygucci@proton.me</div>
+                <div class="contact-description">
+                    Alle Anfragen, Bookings und Kooperationen
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-label">Fashion Brand</div>
+                <div class="contact-value">room1gianni.com</div>
+                <div class="contact-description">
+                    Exklusive Modekollektionen von Gianni
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-grid" style="margin-top: 20px;">
+            <div>
+                <h3 style="color: #39FF14; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 10pt;">Release Info</h3>
+                <div class="bio-text" style="font-size: 9pt;">
+                    <strong>Album:</strong> GIANNI<br>
+                    <strong>Artist:</strong> Jonny Gucci<br>
+                    <strong>Release:</strong> 2025<br>
+                    <strong>Format:</strong> Digital, Vinyl, Limited Edition<br>
+                    <strong>Genre:</strong> Hip-Hop / Experimental Rap<br>
+                    <strong>Language:</strong> German<br>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="color: #39FF14; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 10pt;">Key Tracks</h3>
+                <div class="bio-text" style="font-size: 9pt;">
+                    • <strong>Gianni</strong> (Album Opener)<br>
+                    • <strong>Rapunzel</strong> feat. Spaceship8<br>
+                    • <strong>Umami</strong> feat. Gold<br>
+                    • <strong>Pornstar</strong> feat. Pimp.P<br>
+                    • <strong>Regenschirm</strong> (Album Closer)<br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quote-box" style="margin-top: 20px; margin-bottom: 10px; border: 4px solid #39FF14; border-left: 8px solid #39FF14;">
+            <div class="quote-text">
+                <strong style="color: #39FF14; font-size: 13pt; text-transform: uppercase; letter-spacing: 2px;">EXCLUSIVE PREVIEW</strong><br><br>
+                <a href="https://drive.google.com/drive/folders/1dk3SVgYHCRkOHabFUZx_urNIkmBxUqdv?usp=sharing" style="color: #000000; text-decoration: underline; font-weight: bold; font-size: 12pt;">drive.google.com/gianni-album</a>
+            </div>
+        </div>
+
+        <div class="quote-box" style="margin-top: 10px; margin-bottom: 30px;">
+            <div class="quote-text">
+                JONNY GUCCI - GIANNI 2025<br>
+                Raw, unfiltered, authentic<br><br>
+                "Oh mein Gott Gianni, das mein Blueprint"
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <span class="footer-highlight">JONNY GUCCI</span> | GIANNI EPK | Page 5 | © 2025 GIANNI Records | All Rights Reserved
+        </div>
+    </div>
+</body>
+</html>

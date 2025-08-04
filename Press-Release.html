@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESS RELEASE - Jonny Gucci "GIANNI"</title>
+    <style>
+        @font-face {
+            font-family: 'RST-Reactor XCNDBold';
+            src: url('RSTReactorTRIAL-XCndBold-BF65a89475a3ace.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Broken Lines';
+            src: url('BrokenLinesRegular-9V7Z.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        @page {
+            size: A4 portrait;
+            margin: 20mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #fff;
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            font-size: 11pt;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .press-label {
+            font-family: 'Broken Lines', cursive;
+            font-size: 24pt;
+            color: #39FF14;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .main-title {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 48pt;
+            color: #BAB6C0;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            font-size: 18pt;
+            color: #000;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .date-location {
+            font-size: 12pt;
+            color: #666;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 16pt;
+            color: #39FF14;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #39FF14;
+            padding-bottom: 5px;
+        }
+        
+        .paragraph {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: #f8f8f8;
+            border-left: 6px solid #39FF14;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: '"';
+            font-size: 48pt;
+            color: #39FF14;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-family: 'Courier New', monospace;
+            font-size: 12pt;
+            font-weight: bold;
+            margin-left: 30px;
+            line-height: 1.5;
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .fact-item {
+            background: #2a2a2a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .fact-number {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 24pt;
+            color: #39FF14;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .fact-label {
+            font-size: 10pt;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-section {
+            background: #000;
+            color: #fff;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-title {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 18pt;
+            color: #39FF14;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+        }
+        
+        .contact-label {
+            color: #39FF14;
+            font-weight: bold;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-value {
+            color: #fff;
+            font-size: 12pt;
+            font-weight: bold;
+        }
+        
+        .preview-box {
+            background: #39FF14;
+            color: #000;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            border: 3px solid #000;
+        }
+        
+        .preview-title {
+            font-family: 'RST-Reactor XCNDBold', sans-serif;
+            font-size: 16pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .preview-link {
+            font-size: 12pt;
+            color: #000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 2px solid #39FF14;
+            color: #666;
+            font-size: 9pt;
+        }
+        
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="press-label">Press Release</div>
+        <div class="main-title">GIANNI</div>
+        <div class="subtitle">Jonny Gucci</div>
+        <div class="date-location">Frankfurt, Deutschland — 2025</div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title">Album Announcement</div>
+        <div class="paragraph">
+            <strong>Jonny Gucci</strong> kündigt die Veröffentlichung seines neuen Albums <strong>"GIANNI"</strong> für 2025 an. Das 16-Track-Album repräsentiert eine neue Ära des deutschen Hip-Hop und vereint High-Fashion-Referenzen mit rohen, unzensierten Texten.
+        </div>
+        <div class="paragraph">
+            "GIANNI" ist mehr als nur ein Album – es ist eine Weltanschauung. Jonny Gucci bewegt sich mühelos zwischen Luxus und Authentizität, zwischen Designer-Brands und Street-Credibility. Seine Texte sind geprägt von einer Generation, die keine Kompromisse macht.
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <div class="quote-text">
+            "He, das ist einfach absurd, Bro<br>
+            Ich mach einfach nur, was ich will<br>
+            Mach Musik, design Klamotten und in der restlichen Zeit geh ich aus<br>
+            Bestell mir einfach das Teuerste auf Karte, ohne zu wissen, was es ist"
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title">Künstlerische Vision</div>
+        <div class="paragraph">
+            Mit seinem charakteristischen Tag "Oh mein Gott Gianni" schafft Jonny Gucci einen unverwechselbaren Sound, der durch alle 16 Tracks zieht. Das Album vereint experimentelle Hip-Hop-Sounds mit einer minimalistischen aber impactvollen visuellen Identität.
+        </div>
+        <div class="paragraph">
+            Die Zusammenarbeit mit Künstlern wie <strong>Spaceship8</strong>, <strong>Gold</strong>, <strong>Kiki</strong> und <strong>Pimp.P</strong> zeigt Jonny Guccis Fähigkeit, verschiedene Stile und Persönlichkeiten in sein musikalisches Universum zu integrieren.
+        </div>
+    </div>
+
+    <div class="facts-grid">
+        <div class="fact-item">
+            <span class="fact-number">16</span>
+            <span class="fact-label">Tracks</span>
+        </div>
+        <div class="fact-item">
+            <span class="fact-number">3<sup style="font-size: 16pt;">½</sup></span>
+            <span class="fact-label">Features</span>
+        </div>
+        <div class="fact-item">
+            <span class="fact-number">2025</span>
+            <span class="fact-label">Release</span>
+        </div>
+        <div class="fact-item">
+            <span class="fact-number">OMG</span>
+            <span class="fact-label">Signature</span>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title">Highlights & Key Tracks</div>
+        <div class="paragraph">
+            <strong>"Gianni"</strong> als Album-Opener setzt den Ton mit seinem ikonischen Hook "Trage Marni über Marni". <strong>"Rapunzel" feat. Spaceship8</strong> zeigt die kollaborative Seite des Albums, während <strong>"Denim" feat. Kiki</strong> Fashion und Musik perfekt verschmelzen lässt.
+        </div>
+        <div class="paragraph">
+            Das Album schließt mit <strong>"Regenschirm"</strong> – einem metaphorischen und tiefen Track, der trotzdem den typischen GIANNI-Twist behält. Jeder Song trägt das unverwechselbare "Oh mein Gott Gianni"-Tag, das zum Markenzeichen des Künstlers geworden ist.
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title">Fashion & Brand</div>
+        <div class="paragraph">
+            Parallel zum Album präsentiert Jonny Gucci seine Modemarke <strong>room1gianni</strong>. Die exklusiven Kollektionen spiegeln die Ästhetik des Albums wider: minimalistisch aber impactful, roh aber durchdacht.
+        </div>
+        <div class="paragraph">
+            Das Album wird auch als limitierte Vinyl-Edition erhältlich sein – ein Sammlerstück für Fans, die den physischen Aspekt der Musik schätzen.
+        </div>
+    </div>
+
+    <div class="preview-box">
+        <div class="preview-title">🎧 Exclusive Preview</div>
+        <div>
+            <a href="https://drive.google.com/drive/folders/1dk3SVgYHCRkOHabFUZx_urNIkmBxUqdv?usp=sharing" class="preview-link">drive.google.com/gianni-album</a>
+        </div>
+        <div style="margin-top: 10px; font-size: 10pt; font-style: italic;">
+            Pre-Release Exclusive Access für Medienvertreter
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-title">Press Contact</div>
+        <div class="contact-info">
+            <div>
+                <div class="contact-item">
+                    <div class="contact-label">Artist Contact</div>
+                    <div class="contact-value">jonnygucci@proton.me</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Fashion Brand</div>
+                    <div class="contact-value">room1gianni.com</div>
+                </div>
+            </div>
+            <div>
+                <div class="contact-item">
+                    <div class="contact-label">Social Media</div>
+                    <div class="contact-value">@jonnygucci</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Genre</div>
+                    <div class="contact-value">Hip-Hop / Experimental Rap</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong style="color: #39FF14;">JONNY GUCCI - GIANNI 2025</strong><br>
+        Raw, unfiltered, authentic<br><br>
+        "Oh mein Gott Gianni, das mein Blueprint"<br><br>
+        © 2025 GIANNI Records | All Rights Reserved
+    </div>
+</body>
+</html>
