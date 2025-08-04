@@ -235,7 +235,7 @@
         }
         
         .social-link {
-            color: #39FF14;
+            color: #000;
             text-decoration: none;
             font-weight: bold;
             border-bottom: 2px solid transparent;
@@ -243,7 +243,19 @@
         }
         
         .social-link:hover {
-            border-bottom-color: #39FF14;
+            border-bottom-color: #000;
+        }
+        
+        .contact-link {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            border-bottom-color: #000;
         }
         
         .album-facts {
@@ -958,13 +970,17 @@
         <div class="contact-grid">
             <div class="contact-section">
                 <h3>Contact</h3>
-                <div class="contact-info">jonnygucci@proton.me</div>
+                <div class="contact-info">
+                    <a href="mailto:jonnygucci@proton.me" class="contact-link">jonnygucci@proton.me</a>
+                </div>
                 <div class="contact-description">Alle Anfragen, Bookings und Kooperationen</div>
             </div>
             
             <div class="contact-section">
                 <h3>Fashion Brand</h3>
-                <div class="contact-info">room1gianni.com</div>
+                <div class="contact-info">
+                    <a href="https://room1gianni.com" target="_blank" class="contact-link">room1gianni.com</a>
+                </div>
                 <div class="contact-description">Exklusive Modekollektionen von Gianni</div>
             </div>
             
