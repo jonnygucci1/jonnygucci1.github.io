@@ -99,7 +99,7 @@
         
         .omg-hero {
             font-family: 'Broken Lines', cursive;
-            font-size: clamp(40px, 8vw, 120px);
+            font-size: clamp(60px, 12vw, 120px);
             color: #39FF14;
             font-weight: normal;
             text-transform: uppercase;
@@ -109,7 +109,7 @@
         
         .gianni-hero {
             font-family: 'RST-Reactor XCNDBold', sans-serif;
-            font-size: clamp(60px, 12vw, 200px);
+            font-size: clamp(80px, 18vw, 200px);
             color: #BAB6C0;
             font-weight: bold;
             text-transform: uppercase;
@@ -426,15 +426,19 @@
             
             .section-indicator {
                 right: 20px;
-                top: 20px;
-                font-size: 12px;
-                padding: 6px 10px;
+                top: 25px;
+                font-size: 13px;
+                padding: 8px 12px;
             }
         }
         
         @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+            
             .section {
-                padding: 60px 20px;
+                padding: 80px 20px;
             }
             
             .artist-content {
@@ -458,46 +462,65 @@
                 position: relative;
                 transform: none;
                 margin-top: 40px;
+                font-size: 18px;
+                padding: 12px 20px;
             }
             
             .nav {
                 position: fixed;
-                bottom: 20px;
+                bottom: 25px;
                 left: 50%;
                 top: auto;
                 transform: translateX(-50%);
-                background: rgba(0,0,0,0.9);
-                padding: 10px 20px;
-                border-radius: 25px;
-                backdrop-filter: blur(15px);
+                background: rgba(0,0,0,0.95);
+                padding: 12px 25px;
+                border-radius: 30px;
+                backdrop-filter: blur(20px);
                 flex-direction: row;
-                gap: 15px;
-                border: 1px solid rgba(57, 255, 20, 0.3);
+                gap: 18px;
+                border: 2px solid rgba(57, 255, 20, 0.4);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
             }
             
             .nav-dot {
-                border-color: rgba(57, 255, 20, 0.8);
+                border-color: rgba(57, 255, 20, 0.9);
+                width: 12px;
+                height: 12px;
             }
             
             .section-indicator {
-                right: 15px;
-                top: 15px;
-                font-size: 11px;
-                padding: 5px 8px;
+                right: 20px;
+                top: 30px;
+                font-size: 12px;
+                padding: 8px 12px;
+                border-radius: 15px;
             }
             
             .omg-hero {
-                font-size: clamp(30px, 8vw, 80px);
+                font-size: clamp(50px, 15vw, 100px);
             }
             
             .gianni-hero {
-                font-size: clamp(40px, 12vw, 120px);
+                font-size: clamp(70px, 20vw, 140px);
+            }
+            
+            .artist-name-hero {
+                font-size: 20px;
+            }
+            
+            .epk-subtitle-hero {
+                font-size: 14px;
             }
         }
         
         @media (max-width: 480px) {
+            .hero {
+                padding: 30px 15px;
+                min-height: 100vh;
+            }
+            
             .section {
-                padding: 40px 15px;
+                padding: 60px 15px;
             }
             
             .visual-grid {
@@ -509,25 +532,68 @@
             }
             
             .album-facts {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
             
             .nav {
-                bottom: 15px;
-                padding: 8px 15px;
-                gap: 12px;
+                bottom: 20px;
+                padding: 10px 20px;
+                gap: 15px;
+                border-radius: 25px;
             }
             
             .nav-dot {
-                width: 8px;
-                height: 8px;
+                width: 10px;
+                height: 10px;
+            }
+            
+            .section-indicator {
+                right: 15px;
+                top: 25px;
+                font-size: 11px;
+                padding: 6px 10px;
+                border-radius: 12px;
+            }
+            
+            .omg-hero {
+                font-size: clamp(45px, 12vw, 80px);
+                margin-bottom: -15px;
+            }
+            
+            .gianni-hero {
+                font-size: clamp(60px, 16vw, 120px);
+                margin-bottom: 30px;
+            }
+            
+            .artist-name-hero {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .epk-subtitle-hero {
+                font-size: 13px;
+            }
+            
+            .year-badge {
+                font-size: 16px;
+                padding: 10px 18px;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .omg-hero {
+                font-size: clamp(40px, 11vw, 70px);
+            }
+            
+            .gianni-hero {
+                font-size: clamp(55px, 15vw, 110px);
             }
             
             .section-indicator {
                 right: 10px;
-                top: 10px;
+                top: 20px;
                 font-size: 10px;
-                padding: 4px 6px;
+                padding: 5px 8px;
             }
         }
         
@@ -546,11 +612,14 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: bold;
-            opacity: 0.7;
-            background: rgba(255,255,255,0.9);
-            padding: 8px 12px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            opacity: 0.9;
+            background: rgba(255,255,255,0.95);
+            padding: 10px 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            z-index: 50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
     </style>
 </head>
