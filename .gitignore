@@ -1,0 +1,9 @@
+# Songtexte nicht pushen
+*.txt
+
+# macOS
+.DS_Store
+
+# Andere temporäre Dateien
+*.tmp
+*.log

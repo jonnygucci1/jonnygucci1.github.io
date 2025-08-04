@@ -424,11 +424,10 @@
                 padding: 15px 6px;
             }
             
-            .section-indicator {
+            #contact .section-indicator {
                 right: 20px;
                 top: 25px;
-                font-size: 13px;
-                padding: 8px 12px;
+                font-size: 20px;
             }
         }
         
@@ -488,12 +487,10 @@
                 height: 12px;
             }
             
-            .section-indicator {
+            #contact .section-indicator {
                 right: 20px;
                 top: 30px;
-                font-size: 12px;
-                padding: 8px 12px;
-                border-radius: 15px;
+                font-size: 18px;
             }
             
             .omg-hero {
@@ -547,12 +544,10 @@
                 height: 10px;
             }
             
-            .section-indicator {
+            #contact .section-indicator {
                 right: 15px;
                 top: 25px;
-                font-size: 11px;
-                padding: 6px 10px;
-                border-radius: 12px;
+                font-size: 16px;
             }
             
             .omg-hero {
@@ -589,11 +584,10 @@
                 font-size: clamp(55px, 15vw, 110px);
             }
             
-            .section-indicator {
+            #contact .section-indicator {
                 right: 10px;
                 top: 20px;
-                font-size: 10px;
-                padding: 5px 8px;
+                font-size: 14px;
             }
         }
         
@@ -604,22 +598,27 @@
         
         /* Section indicators */
         .section-indicator {
+            display: none;
+        }
+        
+        /* Special indicator only for contact section */
+        #contact .section-indicator {
+            display: block;
             position: absolute;
             top: 40px;
             right: 40px;
-            font-size: 14px;
+            font-family: 'Broken Lines', cursive;
+            font-size: 24px;
             color: #39FF14;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-weight: bold;
-            opacity: 0.9;
-            background: rgba(255,255,255,0.95);
-            padding: 10px 15px;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(57, 255, 20, 0.3);
+            font-weight: normal;
+            opacity: 1;
+            background: none;
+            padding: 0;
+            border: none;
             z-index: 50;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            backdrop-filter: none;
+            box-shadow: none;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -645,7 +644,6 @@
 
     <!-- Artist Section -->
     <section id="artist" class="section">
-        <div class="section-indicator">Artist</div>
         <div class="section-header">
             <h1 class="section-title">ARTIST</h1>
             <div class="section-subtitle">The Story Behind The Music</div>
@@ -702,7 +700,6 @@
 
     <!-- Tracklist Section 1-8 -->
     <section id="tracklist1" class="section">
-        <div class="section-indicator">Tracks 1-8</div>
         <div class="section-header">
             <h1 class="section-title">TRACKLIST</h1>
             <div class="section-subtitle">Songs 1-8</div>
@@ -780,7 +777,6 @@
 
     <!-- Tracklist Section 9-16 -->
     <section id="tracklist2" class="section">
-        <div class="section-indicator">Tracks 9-16</div>
         <div class="section-header">
             <h1 class="section-title">TRACKLIST</h1>
             <div class="section-subtitle">Songs 9-16</div>
@@ -865,7 +861,6 @@
 
     <!-- Visual Identity Section -->
     <section id="visual" class="section">
-        <div class="section-indicator">Visual</div>
         <div class="section-header">
             <h1 class="section-title">VISUAL IDENTITY</h1>
             <div class="section-subtitle">Cinematic Style & Limited Edition</div>
