@@ -48,26 +48,53 @@
         /* Navigation */
         .nav {
             position: fixed;
-            top: 40px;
+            top: 50%;
             left: 40px;
+            transform: translateY(-50%);
             z-index: 100;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 20px 8px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(57, 255, 20, 0.2);
         }
         
         .nav-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border: 2px solid #39FF14;
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background: transparent;
+            position: relative;
+        }
+        
+        .nav-dot::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(57, 255, 20, 0.1);
+            top: -7px;
+            left: -7px;
+            transform: scale(0);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .nav-dot.active,
         .nav-dot:hover {
             background: #39FF14;
+            transform: scale(1.2);
+        }
+        
+        .nav-dot.active::after,
+        .nav-dot:hover::after {
+            transform: scale(1);
         }
         
         .omg-hero {
@@ -391,6 +418,20 @@
         }
         
         /* Responsive */
+        @media (max-width: 1024px) {
+            .nav {
+                left: 20px;
+                padding: 15px 6px;
+            }
+            
+            .section-indicator {
+                right: 20px;
+                top: 20px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .section {
                 padding: 60px 20px;
@@ -423,15 +464,26 @@
                 position: fixed;
                 bottom: 20px;
                 left: 50%;
+                top: auto;
                 transform: translateX(-50%);
-                background: rgba(0,0,0,0.8);
+                background: rgba(0,0,0,0.9);
                 padding: 10px 20px;
                 border-radius: 25px;
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(15px);
+                flex-direction: row;
+                gap: 15px;
+                border: 1px solid rgba(57, 255, 20, 0.3);
+            }
+            
+            .nav-dot {
+                border-color: rgba(57, 255, 20, 0.8);
             }
             
             .section-indicator {
-                display: none;
+                right: 15px;
+                top: 15px;
+                font-size: 11px;
+                padding: 5px 8px;
             }
             
             .omg-hero {
@@ -459,6 +511,24 @@
             .album-facts {
                 padding: 30px 20px;
             }
+            
+            .nav {
+                bottom: 15px;
+                padding: 8px 15px;
+                gap: 12px;
+            }
+            
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .section-indicator {
+                right: 10px;
+                top: 10px;
+                font-size: 10px;
+                padding: 4px 6px;
+            }
         }
         
         /* Smooth scrolling */
@@ -477,6 +547,10 @@
             letter-spacing: 0.2em;
             font-weight: bold;
             opacity: 0.7;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
     </style>
 </head>
@@ -502,7 +576,7 @@
 
     <!-- Artist Section -->
     <section id="artist" class="section">
-        <div class="section-indicator">01</div>
+        <div class="section-indicator">Artist</div>
         <div class="section-header">
             <h1 class="section-title">ARTIST</h1>
             <div class="section-subtitle">The Story Behind The Music</div>
@@ -559,7 +633,7 @@
 
     <!-- Tracklist Section 1-8 -->
     <section id="tracklist1" class="section">
-        <div class="section-indicator">02</div>
+        <div class="section-indicator">Tracks 1-8</div>
         <div class="section-header">
             <h1 class="section-title">TRACKLIST</h1>
             <div class="section-subtitle">Songs 1-8</div>
@@ -637,7 +711,7 @@
 
     <!-- Tracklist Section 9-16 -->
     <section id="tracklist2" class="section">
-        <div class="section-indicator">03</div>
+        <div class="section-indicator">Tracks 9-16</div>
         <div class="section-header">
             <h1 class="section-title">TRACKLIST</h1>
             <div class="section-subtitle">Songs 9-16</div>
@@ -722,7 +796,7 @@
 
     <!-- Visual Identity Section -->
     <section id="visual" class="section">
-        <div class="section-indicator">04</div>
+        <div class="section-indicator">Visual</div>
         <div class="section-header">
             <h1 class="section-title">VISUAL IDENTITY</h1>
             <div class="section-subtitle">Cinematic Style & Limited Edition</div>
@@ -777,7 +851,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="section-indicator">05</div>
+        <div class="section-indicator">29.08</div>
         <div class="section-header">
             <h1 class="section-title">CONTACT</h1>
             <div class="section-subtitle">Business & Press Information</div>
@@ -838,35 +912,52 @@
 
     <script>
         function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
+            const target = document.getElementById(sectionId);
+            const targetPosition = target.offsetTop - 100;
+            
+            window.scrollTo({
+                top: targetPosition,
                 behavior: 'smooth'
             });
             
-            // Update active nav dot
-            document.querySelectorAll('.nav-dot').forEach(dot => dot.classList.remove('active'));
-            event.target.classList.add('active');
+            // Update active nav dot with consistent timing
+            setTimeout(() => {
+                document.querySelectorAll('.nav-dot').forEach(dot => dot.classList.remove('active'));
+                event.target.classList.add('active');
+            }, 100);
         }
         
-        // Update active nav dot on scroll
+        // Update active nav dot on scroll with smooth transitions
+        let isScrolling = false;
+        
         window.addEventListener('scroll', () => {
-            const sections = ['hero', 'artist', 'tracklist1', 'tracklist2', 'visual', 'contact'];
-            const navDots = document.querySelectorAll('.nav-dot');
-            
-            let current = '';
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                const sectionTop = section.offsetTop - 200;
-                if (window.pageYOffset >= sectionTop) {
-                    current = sectionId;
-                }
-            });
-            
-            navDots.forEach((dot, index) => {
-                dot.classList.remove('active');
-                if (sections[index] === current) {
-                    dot.classList.add('active');
-                }
-            });
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    const sections = ['hero', 'artist', 'tracklist1', 'tracklist2', 'visual', 'contact'];
+                    const navDots = document.querySelectorAll('.nav-dot');
+                    
+                    let current = 'hero';
+                    sections.forEach(sectionId => {
+                        const section = document.getElementById(sectionId);
+                        const sectionTop = section.offsetTop - 300;
+                        const sectionBottom = sectionTop + section.offsetHeight;
+                        
+                        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+                            current = sectionId;
+                        }
+                    });
+                    
+                    navDots.forEach((dot, index) => {
+                        dot.classList.remove('active');
+                        if (sections[index] === current) {
+                            dot.classList.add('active');
+                        }
+                    });
+                    
+                    isScrolling = false;
+                });
+            }
+            isScrolling = true;
         });
     </script>
 </body>
