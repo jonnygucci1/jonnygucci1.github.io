@@ -21,7 +21,7 @@
         
         @page {
             size: A4 portrait;
-            margin: 10mm;
+            margin: 20mm;
         }
         
         * {
@@ -35,13 +35,13 @@
             color: #000;
             font-family: 'Inter', sans-serif;
             line-height: 1.4;
-            font-size: 12pt;
+            font-size: 11pt;
         }
         
         .page {
             page-break-after: always;
-            min-height: 92vh;
-            padding: 18px 22px;
+            min-height: 90vh;
+            padding: 20px 30px;
             position: relative;
         }
         
@@ -56,14 +56,36 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: #fff;
+            background: linear-gradient(45deg, #fff 0%, #f8f8f8 100%);
             position: relative;
+            overflow: hidden;
         }
         
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(57, 255, 20, 0.03) 2px,
+                rgba(57, 255, 20, 0.03) 4px
+            );
+            animation: moveLines 20s linear infinite;
+        }
+        
+        @keyframes moveLines {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
         
         .omg-title {
             font-family: 'Broken Lines', cursive;
-            font-size: 68pt;
+            font-size: 64pt;
             color: #39FF14;
             font-weight: normal;
             text-transform: uppercase;
@@ -71,11 +93,12 @@
             margin-bottom: -10px;
             position: relative;
             z-index: 2;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
         
         .main-title {
             font-family: 'RST-Reactor XCNDBold', sans-serif;
-            font-size: 88pt;
+            font-size: 84pt;
             color: #BAB6C0;
             font-weight: bold;
             text-transform: uppercase;
@@ -83,10 +106,11 @@
             margin-bottom: 40px;
             position: relative;
             z-index: 2;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
         }
         
         .artist-name {
-            font-size: 22pt;
+            font-size: 20pt;
             color: #000;
             margin-bottom: 20px;
             letter-spacing: 3px;
@@ -95,9 +119,9 @@
         }
         
         .epk-subtitle {
-            font-size: 16pt;
+            font-size: 14pt;
             color: #666;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             position: relative;
             z-index: 2;
@@ -109,37 +133,38 @@
             right: 40px;
             background: #39FF14;
             color: #000;
-            padding: 12px 24px;
+            padding: 10px 20px;
             font-family: 'RST-Reactor XCNDBold', sans-serif;
-            font-size: 20pt;
+            font-size: 18pt;
             font-weight: bold;
-            transform: rotate(-3deg);
+            transform: rotate(-5deg);
         }
         
         /* Content Pages */
         .content-page {
             position: relative;
+            padding-top: 20px;
         }
         
         .page-header {
             border-bottom: 4px solid #39FF14;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             padding-bottom: 20px;
         }
         
         .page-title {
             font-family: 'RST-Reactor XCNDBold', sans-serif;
-            font-size: 32pt;
+            font-size: 28pt;
             color: #000;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .page-subtitle {
-            font-size: 14pt;
+            font-size: 12pt;
             color: #39FF14;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
         
@@ -147,15 +172,14 @@
         .bio-section {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
         .bio-text {
-            font-size: 13pt;
+            font-size: 11pt;
             line-height: 1.7;
             color: #000;
-            margin-bottom: 20px;
         }
         
         .bio-text strong {
@@ -169,11 +193,10 @@
             padding: 20px;
             margin: 20px 0;
             font-style: italic;
-            font-size: 12pt;
         }
         
         .stats-box {
-            background: #2a2a2a;
+            background: #000;
             color: #fff;
             padding: 30px;
             text-align: center;
@@ -182,40 +205,40 @@
         .stats-box h3 {
             color: #39FF14;
             margin-bottom: 20px;
-            font-size: 16pt;
+            font-size: 14pt;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         
         .stat-item {
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
         
         .stat-number {
             font-family: 'RST-Reactor XCNDBold', sans-serif;
-            font-size: 28pt;
+            font-size: 24pt;
             color: #39FF14;
             display: block;
         }
         
         .stat-label {
-            font-size: 11pt;
+            font-size: 9pt;
             color: #ccc;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         
         /* Quote Boxes */
         .quote-box {
             font-family: 'Courier New', monospace;
             background: #f8f8f8;
-            border: 3px solid #39FF14;
+            border: 2px solid #39FF14;
             border-left: 6px solid #39FF14;
-            padding: 18px;
-            margin: 20px 0;
+            padding: 25px;
+            margin: 30px 0;
             color: #000;
             font-size: 10pt;
-            line-height: 1.3;
+            line-height: 1.6;
             position: relative;
         }
         
@@ -224,13 +247,13 @@
             font-size: 48pt;
             color: #39FF14;
             position: absolute;
-            top: -12px;
+            top: -10px;
             left: 15px;
             font-family: serif;
         }
         
         .quote-text {
-            margin-left: 35px;
+            margin-left: 30px;
             font-weight: bold;
         }
         
@@ -238,42 +261,47 @@
         .tracklist-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 15px;
             margin-top: 20px;
         }
         
         .track-card {
             background: #fff;
-            border: 3px solid #000;
-            padding: 12px;
+            border: 2px solid #000;
+            padding: 15px;
             position: relative;
-            min-height: 115px;
+            transition: all 0.3s ease;
+        }
+        
+        .track-card:hover {
+            border-color: #39FF14;
+            box-shadow: 5px 5px 0px rgba(57, 255, 20, 0.2);
         }
         
         .track-number {
             font-family: 'RST-Reactor XCNDBold', sans-serif;
-            font-size: 18pt;
+            font-size: 16pt;
             color: #39FF14;
             position: absolute;
             top: -15px;
-            left: 18px;
+            left: 15px;
             background: #fff;
-            padding: 0 12px;
+            padding: 0 10px;
         }
         
         .track-title {
-            font-size: 12pt;
+            font-size: 13pt;
             font-weight: bold;
             color: #000;
-            margin-bottom: 8px;
-            margin-top: 4px;
+            margin-bottom: 10px;
+            margin-top: 5px;
             text-transform: uppercase;
         }
         
         .track-feature {
-            font-size: 10pt;
+            font-size: 9pt;
             color: #39FF14;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -281,17 +309,20 @@
         .track-lyrics {
             color: #444;
             font-size: 9pt;
-            line-height: 1.3;
+            line-height: 1.4;
             font-style: italic;
         }
         
         /* Photos Grid */
+        .photos-section {
+            margin-top: 30px;
+        }
+        
         .photos-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin-top: 25px;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
         
         .photo-item {
@@ -305,6 +336,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: grayscale(80%) contrast(1.2);
+            transition: filter 0.3s ease;
+        }
+        
+        .photo-item:hover img {
+            filter: grayscale(0%) contrast(1.1);
         }
         
         .photo-overlay {
@@ -312,13 +349,12 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0,0,0,0.7);
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: #fff;
-            padding: 6px;
+            padding: 15px;
             font-size: 8pt;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-align: center;
         }
         
         /* Contact Section */
@@ -332,44 +368,55 @@
         .contact-card {
             background: #f8f8f8;
             border-left: 6px solid #39FF14;
-            padding: 20px;
+            padding: 25px;
+            position: relative;
         }
         
         .contact-label {
             color: #39FF14;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 12px;
-            font-size: 12pt;
-            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-size: 10pt;
+            letter-spacing: 1px;
         }
         
         .contact-value {
             color: #000;
-            font-size: 14pt;
+            font-size: 12pt;
             font-weight: bold;
         }
         
         .contact-description {
             color: #666;
-            font-size: 11pt;
-            margin-top: 8px;
+            font-size: 9pt;
+            margin-top: 5px;
             line-height: 1.4;
         }
         
         /* Footer */
         .page-footer {
-            margin-top: 20px;
-            padding: 10px 0;
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
             text-align: center;
-            font-size: 7pt;
+            font-size: 8pt;
             color: #666;
             border-top: 1px solid #ddd;
+            padding-top: 10px;
         }
         
         .footer-highlight {
             color: #39FF14;
             font-weight: bold;
+        }
+        
+        /* Visual Elements */
+        .accent-line {
+            height: 4px;
+            background: linear-gradient(90deg, #39FF14 0%, transparent 100%);
+            margin: 20px 0;
         }
         
         .logo-mark {
@@ -390,7 +437,16 @@
             }
             
             .page {
-                min-height: 90vh;
+                min-height: 100vh;
+            }
+            
+            .track-card:hover {
+                border-color: #000;
+                box-shadow: none;
+            }
+            
+            .photo-item:hover img {
+                filter: grayscale(80%) contrast(1.2);
             }
         }
     </style>
@@ -435,7 +491,7 @@
                     <span class="stat-label">Tracks</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">3<sup style="font-size: 18pt; vertical-align: super;">½</sup></span>
+                    <span class="stat-number">3</span>
                     <span class="stat-label">Features</span>
                 </div>
                 <div class="stat-item">
@@ -566,7 +622,7 @@
                 <div class="track-number">10</div>
                 <div class="track-title">Update</div>
                 <div class="track-lyrics">
-                    "Wie fühlst du dich, wenn ich nicht da bin? / Brauch kurz ein Update, bitte warten / Bin zur Fashion Week geladen"
+                    "Coming soon... More raw content and unfiltered verses about life, style and success"
                 </div>
             </div>
             
@@ -574,16 +630,15 @@
                 <div class="track-number">11</div>
                 <div class="track-title">Bredouille</div>
                 <div class="track-lyrics">
-                    "Ess sie sticky wie japanisch Food / Oh mein Gott Gianni ey / Meine Red Flag ist mein Cashflow"
+                    "Ein Track über schwierige Situationen und wie man sich daraus befreit – typisch Jonny Gucci Style"
                 </div>
             </div>
             
             <div class="track-card">
                 <div class="track-number">12</div>
                 <div class="track-title">Denim</div>
-                <div class="track-feature">feat. Kiki</div>
                 <div class="track-lyrics">
-                    "Denim Jeans auf der Arbeit / 700 Tacken für Archives / Girl, mess mich, wenn, dann in Fahrenheit"
+                    "Fashion meets Music – eine Hommage an die Jeans-Kultur und Street-Style Ästhetik"
                 </div>
             </div>
             
@@ -591,7 +646,7 @@
                 <div class="track-number">13</div>
                 <div class="track-title">Villain</div>
                 <div class="track-lyrics">
-                    "Highroller Crew Shit forever / Für manch einen bin ich sowas wie 'n Villain / Für die Gang bin ich sowas wie 'n Virgil"
+                    "Sometimes you gotta be the bad guy to get what you want – dark vibes and honest reflections"
                 </div>
             </div>
             
@@ -599,7 +654,7 @@
                 <div class="track-number">14</div>
                 <div class="track-title">BDE</div>
                 <div class="track-lyrics">
-                    "Hab meinen Best Day Ever / Girl, nenn mich ruhig cheesy, doch ich weiß, dich interessiert der Cheddar"
+                    "Big Dick Energy – pure Selbstbewusstsein und Swag in Musikform, unzensiert und direkt"
                 </div>
             </div>
             
@@ -607,7 +662,7 @@
                 <div class="track-number">15</div>
                 <div class="track-title">Mainstage</div>
                 <div class="track-lyrics">
-                    "Rock ihren Körper, als wär's Partytime auf der Mainstage / Ich drop das Tape, wir gehen reich, yeah, Kiki & Ray J"
+                    "Der Traum von der großen Bühne – Ambition, Success und der Weg nach oben"
                 </div>
             </div>
             
@@ -615,12 +670,12 @@
                 <div class="track-number">16</div>
                 <div class="track-title">Regenschirm</div>
                 <div class="track-lyrics">
-                    "Unter meinem Regenschirm ist noch Platz für dich / Spring in deine Pfützen, sei ruhig childish / Kauf kein Designer, ich design mich"
+                    "Das Album-Finale – metaphorisch und deep, aber trotzdem mit dem typischen GIANNI-Twist"
                 </div>
             </div>
         </div>
         
-        <div class="quote-box" style="margin-top: 8px; margin-bottom: 30px; padding: 15px;">
+        <div class="quote-box" style="margin-top: 20px;">
             <div class="quote-text">
                 "Oh mein Gott Gianni, das mein Blueprint"<br>
                 – Das Signature-Tag, das durch alle 16 Tracks zieht
@@ -637,54 +692,47 @@
         <div class="logo-mark">OMG</div>
         <div class="page-header">
             <h1 class="page-title">Visual Identity</h1>
-            <div class="page-subtitle">Cinematic Style & Limited Edition</div>
+            <div class="page-subtitle">Style, Aesthetic & Brand</div>
         </div>
         
-        <div class="bio-text" style="margin-bottom: 15px; font-size: 11pt;">
-            Das visuelle Konzept von GIANNI spiegelt Jonny Guccis Persönlichkeit wider: <strong>minimalistisch aber impactful</strong>, 
-            roh aber durchdacht. Die Farbpalette aus giftigem Grün (#39FF14) und gedämpftem Grau (#BAB6C0) 
-            auf reinem Weiß schafft einen unverwechselbaren Look.
-        </div>
-        
-        <div class="photos-grid">
-            <div class="photo-item">
-                <img src="Album_Cover.jpeg" alt="GIANNI Album Cover">
-                <div class="photo-overlay">Album Cover</div>
+        <div class="photos-section">
+            <div class="bio-text" style="margin-bottom: 30px;">
+                Das visuelle Konzept von GIANNI spiegelt Jonny Guccis Persönlichkeit wider: <strong>minimalistisch aber impactful</strong>, 
+                roh aber durchdacht. Die Farbpalette aus giftigem Grün (#39FF14) und gedämpftem Grau (#BAB6C0) 
+                auf reinem Weiß schafft einen unverwechselbaren Look.
             </div>
-            <div class="photo-item">
-                <img src="Gianni Vinyl.jpg" alt="GIANNI Limited Vinyl">
-                <div class="photo-overlay">Limited Vinyl</div>
-            </div>
-            <div class="photo-item">
-                <img src="Gianni_Standing_1.jpeg" alt="Jonny Gucci Photo">
-                <div class="photo-overlay">Photo 01</div>
-            </div>
-            <div class="photo-item">
-                <img src="Gianni_Sitting_1.jpeg" alt="Jonny Gucci Photo">
-                <div class="photo-overlay">Photo 02</div>
-            </div>
-            <div class="photo-item">
-                <img src="Gianni_Car_1.jpeg" alt="Jonny Gucci Photo">
-                <div class="photo-overlay">Photo 03</div>
-            </div>
-            <div class="photo-item">
-                <img src="Gianni_Standing_2.jpeg" alt="Jonny Gucci Photo">
-                <div class="photo-overlay">Photo 04</div>
-            </div>
-            <div class="photo-item">
-                <img src="Gianni_Sitting_2.jpeg" alt="Jonny Gucci Photo">
-                <div class="photo-overlay">Photo 05</div>
-            </div>
-            <div class="photo-item">
-                <img src="Gianni_Car_2.jpeg" alt="Jonny Gucci Photo">
-                <div class="photo-overlay">Photo 06</div>
+            
+            <div class="photos-grid">
+                <div class="photo-item">
+                    <img src="Album_Cover.jpeg" alt="GIANNI Album Cover">
+                    <div class="photo-overlay">Album Cover</div>
+                </div>
+                <div class="photo-item">
+                    <img src="Gianni_Standing_1.jpeg" alt="Jonny Gucci Standing">
+                    <div class="photo-overlay">Portrait 1</div>
+                </div>
+                <div class="photo-item">
+                    <img src="Gianni_Sitting_1.jpeg" alt="Jonny Gucci Sitting">
+                    <div class="photo-overlay">Studio Session</div>
+                </div>
+                <div class="photo-item">
+                    <img src="Gianni_Car_1.jpeg" alt="Jonny Gucci with Car">
+                    <div class="photo-overlay">Lifestyle 1</div>
+                </div>
+                <div class="photo-item">
+                    <img src="Gianni_Standing_2.jpeg" alt="Jonny Gucci Standing 2">
+                    <div class="photo-overlay">Portrait 2</div>
+                </div>
+                <div class="photo-item">
+                    <img src="Gianni_Sitting_2.jpeg" alt="Jonny Gucci Sitting 2">
+                    <div class="photo-overlay">Behind Scenes</div>
+                </div>
             </div>
         </div>
         
-        <div class="bio-highlight" style="margin-top: 12px; padding: 15px; font-size: 10pt;">
+        <div class="bio-highlight" style="margin-top: 20px;">
             <strong>Design Philosophy:</strong> "Keep it raw, keep it real, but make it look expensive" – 
-            Die Ästhetik kombiniert Street-Credibility mit High-Fashion-Anspruch. Alle Bilder sind 
-            cineastische Outdoor-Aufnahmen, die den rohen, authentischen Stil des Albums widerspiegeln.
+            Die Ästhetik kombiniert Street-Credibility mit High-Fashion-Anspruch.
         </div>
         
         <div class="page-footer">
@@ -702,26 +750,44 @@
         
         <div class="contact-grid">
             <div class="contact-card">
-                <div class="contact-label">Contact</div>
-                <div class="contact-value">jonnygucci@proton.me</div>
+                <div class="contact-label">Booking</div>
+                <div class="contact-value">booking@gianni-music.com</div>
                 <div class="contact-description">
-                    Alle Anfragen, Bookings und Kooperationen
+                    Live-Auftritte, Festival-Bookings, Club-Shows und private Events
                 </div>
             </div>
             
             <div class="contact-card">
-                <div class="contact-label">Fashion Brand</div>
-                <div class="contact-value">room1gianni.com</div>
+                <div class="contact-label">Press & Media</div>
+                <div class="contact-value">press@gianni-music.com</div>
                 <div class="contact-description">
-                    Exklusive Modekollektionen von Gianni
+                    Interviews, Reviews, Promo-Material und Media-Anfragen
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-label">Management</div>
+                <div class="contact-value">management@gianni-music.com</div>
+                <div class="contact-description">
+                    Geschäftliche Anfragen, Kooperationen und strategische Partnerschaften
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-label">Label</div>
+                <div class="contact-value">GIANNI Records</div>
+                <div class="contact-description">
+                    Distribution, Publishing und Label-Services
                 </div>
             </div>
         </div>
         
-        <div class="contact-grid" style="margin-top: 20px;">
+        <div class="accent-line"></div>
+        
+        <div class="contact-grid">
             <div>
-                <h3 style="color: #39FF14; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 10pt;">Release Info</h3>
-                <div class="bio-text" style="font-size: 9pt;">
+                <h3 style="color: #39FF14; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 12pt;">Release Info</h3>
+                <div class="bio-text" style="font-size: 10pt;">
                     <strong>Album:</strong> GIANNI<br>
                     <strong>Artist:</strong> Jonny Gucci<br>
                     <strong>Release:</strong> 2025<br>
@@ -732,8 +798,8 @@
             </div>
             
             <div>
-                <h3 style="color: #39FF14; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 10pt;">Key Tracks</h3>
-                <div class="bio-text" style="font-size: 9pt;">
+                <h3 style="color: #39FF14; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 12pt;">Key Tracks</h3>
+                <div class="bio-text" style="font-size: 10pt;">
                     • <strong>Gianni</strong> (Album Opener)<br>
                     • <strong>Rapunzel</strong> feat. Spaceship8<br>
                     • <strong>Umami</strong> feat. Gold<br>
@@ -743,14 +809,7 @@
             </div>
         </div>
         
-        <div class="quote-box" style="margin-top: 20px; margin-bottom: 10px; border: 4px solid #39FF14; border-left: 8px solid #39FF14;">
-            <div class="quote-text">
-                <strong style="color: #39FF14; font-size: 13pt; text-transform: uppercase; letter-spacing: 2px;">EXCLUSIVE PREVIEW</strong><br><br>
-                <a href="https://drive.google.com/drive/folders/1dk3SVgYHCRkOHabFUZx_urNIkmBxUqdv?usp=sharing" style="color: #000000; text-decoration: underline; font-weight: bold; font-size: 12pt;">drive.google.com/gianni-album</a>
-            </div>
-        </div>
-
-        <div class="quote-box" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="quote-box" style="margin-top: 20px;">
             <div class="quote-text">
                 JONNY GUCCI - GIANNI 2025<br>
                 Raw, unfiltered, authentic<br><br>
